@@ -1,0 +1,6 @@
+h1, p {
+  display: flex;
+  justify-content: center;
+  font-family: fantasy;
+  /*font-weight: bold;*/
+}
