@@ -1,12 +1,26 @@
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 2px solid black;
+  height: 100%;
+
 }
 
 h1, p, .coor {
   font-family: fantasy;
   /*font-weight: bold;*/
   border: 2px solid black;
+}
+
+
+createShape {
+  width: 100px;
+  height: 100px;
+  background: red;
 }

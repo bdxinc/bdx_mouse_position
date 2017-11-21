@@ -1,5 +1,15 @@
 (function(window) {
 
+  var min = 1;
+  var max = 11;
+
+  function random(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
+  var rNumber = random(min,max);
+  console.log(rNumber);
+
 
   function coor(event) {
     var x = event.clientX;
@@ -12,12 +22,15 @@
   window.addEventListener("mousemove", coor, false);
 
 
-  function create() {
+  function shape() {
     // things might happen
+    document.getElementById('shape').classList.add("createShape");
   }
 
-  // var eL = document.getElementById('')...
-  // el.addEventListener("click", create/click, true);
+  // var shapeEl = document.getElementById('shape');
+  // shapeEl.addEventListener("click", shape, true);
+
+  window.addEventListener("click", shape, true);
 
 
 
