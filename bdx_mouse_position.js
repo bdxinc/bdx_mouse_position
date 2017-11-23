@@ -22,13 +22,24 @@
   window.addEventListener("mousemove", coor, false);
 
 
-  function shape() {
+  function shape(event) {
     // things might happen
+
+    console.log(event);
+
+
+    // coor();
+
     var myNewShape = document.createElement("div");
 
     document.getElementById("shape").appendChild(myNewShape);
 
+    myNewShape.style.position = "absolute";
+    myNewShape.style.left = (event.clientX - 50) + "px";
+    myNewShape.style.top = (event.clientY - 50) + "px";
+
     myNewShape.classList.add("redSquare");
+
   }
 
   window.addEventListener("click", shape, true);
