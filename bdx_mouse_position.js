@@ -24,11 +24,7 @@
 
   function shape(event) {
     // things might happen
-
     console.log(event);
-
-
-    // coor();
 
     var myNewShape = document.createElement("div");
 
@@ -55,12 +51,7 @@
 /*
 **NONSENSE**
 
-random();
-
-
-function ...{
-
-colorArr = ["red", "green", "blue".....];
+var colorArr = ["red", "orange", "yellow", "green", "blue", "purple"];
 
 rectangle() {
   var rHeight = random().toString() + "0px";
@@ -76,10 +67,13 @@ rectangle() {
 }
 
 oval() {
-document.getElementById("square").style.height = rNumber.toString() + "0px";
-document.getElementById("square").style.width = rNumber.toString() + "0px";
-document.getElementById("square").style.???radius = "100%";
-document.getElementById("square").style.color = odjColor;
-document.getElementById("square").style.opacity = rNumber.toString() +"0%";
+  var oHeight = random().toString() + "0px";
+  var oWidth = random().toString() + "0px";
+
+  document.getElementById("square").style.height = rNumber.toString() + "0px";
+  document.getElementById("square").style.width = rNumber.toString() + "0px";
+  document.getElementById("square").style.borderRadius = "50%";
+  document.getElementById("square").style.color = odjColor;
+  document.getElementById("square").style.opacity = rNumber.toString() +"0%";
 }
 */
