@@ -11,6 +11,17 @@
   console.log(rNumber.toString());
 
 
+  var colorArr = ["red", "orange", "yellow", "green", "blue", "purple"];
+  var cLength = colorArr.length;
+
+  function randomColor(min, cLength) {
+    return Math.floor(Math.random() * (cLength - min) + min);
+  }
+
+  var rColor = randomColor(min, cLength);
+  console.log(rColor.toString());
+
+
   function coor(event) {
     var x = event.clientX;
     var y = event.clientY;
@@ -25,25 +36,38 @@
   function shape(event) {
     // things might happen
     console.log(event);
+    var sHeight = rNumber.toString() + "0px";
+    var sWidth = rNumber.toString() + "0px";
+    var opacityStat = rNumber.toString() + "0%";
+
+
+    var objColor = colorArr[rColor];
+
 
     var myNewShape = document.createElement("div");
 
     document.getElementById("shape").appendChild(myNewShape);
 
+    myNewShape.style.height = sHeight;
+    myNewShape.style.width = sWidth;
+    myNewShape.style.color = objColor;
+    myNewShape.style.opacity = opacityStat;
+
     myNewShape.style.position = "absolute";
-    myNewShape.style.left = (event.clientX - 50) + "px";
-    myNewShape.style.top = (event.clientY - 50) + "px";
+    myNewShape.style.left = (event.clientX - (sWidth/2)) + "px";
+    myNewShape.style.top = (event.clientY - (sHeight/2)) + "px";
 
-    myNewShape.classList.add("redSquare");
+    myNewShape.classList.add("rectangle");
 
+    // if(Math.random() > 0.5) {
+    //   myNewShape.classList.add("rectangle");
+    // } else {
+    //   myNewShape.style.borderRadius = "50%";
+    //   myNewShape.classList.add("oval");
+    // }
   }
-
   window.addEventListener("click", shape, true);
-
-
-
 }(window));
-
 
 
 
@@ -51,19 +75,13 @@
 /*
 **NONSENSE**
 
-var colorArr = ["red", "orange", "yellow", "green", "blue", "purple"];
 
 rectangle() {
-  var rHeight = random().toString() + "0px";
-  var rWidth = random().toString() + "0px";
 
-  var objColor = colorArr[random()]...?;
-  var opacity = random().toString();
 
-  document.getElementById("square").style.height = randomStat;
-  document.getElementById("square").style.width = randomStat;
-  document.getElementById("square").style.color = odjColor;
-  document.getElementById("square").style.opacity = opacityStat +"0%";
+
+
+
 }
 
 oval() {
