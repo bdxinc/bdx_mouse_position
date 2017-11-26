@@ -11,17 +11,6 @@
   console.log(rNumber.toString());
 
 
-  var colorArr = ["red", "orange", "yellow", "green", "blue", "purple"];
-  var cLength = colorArr.length;
-
-  function randomColor(min, cLength) {
-    return Math.floor(Math.random() * (cLength - min) + min);
-  }
-
-  var rColor = randomColor(min, cLength);
-  console.log(rColor.toString());
-
-
   function coor(event) {
     var x = event.clientX;
     var y = event.clientY;
@@ -33,25 +22,35 @@
   window.addEventListener("mousemove", coor, false);
 
 
+  function randomColor(r, g, b, a) {
+
+    var red = random(0, 255);
+    var green = random(0, 255);
+    var blue = random(0, 255);
+    var alpha = Math.random();
+
+    return "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
+    // console.log(rgba);
+  }
+
+
+
+
+
   function shape(event) {
     // things might happen
     console.log(event);
-    var sHeight = rNumber.toString() + "0px";
-    var sWidth = rNumber.toString() + "0px";
-    var opacityStat = rNumber.toString() + "0%";
 
-
-    var objColor = colorArr[rColor];
-
+    var sHeight = random(1, 200);
+    var sWidth = random(1, 200);
 
     var myNewShape = document.createElement("div");
 
     document.getElementById("shape").appendChild(myNewShape);
 
-    myNewShape.style.height = sHeight;
-    myNewShape.style.width = sWidth;
-    myNewShape.style.color = objColor;
-    myNewShape.style.opacity = opacityStat;
+    myNewShape.style.height = sHeight + "px";
+    myNewShape.style.width = sWidth + "px";
+    myNewShape.style.background = randomColor();
 
     myNewShape.style.position = "absolute";
     myNewShape.style.left = (event.clientX - (sWidth/2)) + "px";
