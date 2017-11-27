@@ -22,7 +22,7 @@
   window.addEventListener("mousemove", coor, false);
 
 
-  function randomColor(r, g, b, a) {
+  function randomColor() {
 
     var red = random(0, 255);
     var green = random(0, 255);
@@ -32,9 +32,6 @@
     return "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
     // console.log(rgba);
   }
-
-
-
 
 
   function shape(event) {
@@ -56,14 +53,13 @@
     myNewShape.style.left = (event.clientX - (sWidth/2)) + "px";
     myNewShape.style.top = (event.clientY - (sHeight/2)) + "px";
 
-    myNewShape.classList.add("rectangle");
 
-    // if(Math.random() > 0.5) {
-    //   myNewShape.classList.add("rectangle");
-    // } else {
-    //   myNewShape.style.borderRadius = "50%";
-    //   myNewShape.classList.add("oval");
-    // }
+    if(Math.random() > 0.5) {
+      myNewShape.classList.add("rectangle");
+    } else {
+      myNewShape.style.borderRadius = "50%";
+      myNewShape.classList.add("oval");
+    }
   }
   window.addEventListener("click", shape, true);
 }(window));

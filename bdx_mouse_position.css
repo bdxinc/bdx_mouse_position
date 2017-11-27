@@ -29,9 +29,49 @@ h1, p, .coor {
 
 
 .rectangle {
-
+  animation-duration: 5s;
+  animation-name: animateRectangle;
 }
 
 .oval {
-
+  animation-duration: 10s;
+  animation-name: ovalSpin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
+
+@keyframes animateRectangle {
+  from {
+    /*stuff*/
+    transform: scale(0, 0);
+  }
+
+  to {
+    /*stuff*/
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes ovalSpin {
+  from {
+    /*stuff*/
+    transform: rotate(0deg);
+  }
+
+  to {
+    /*stuff*/
+    transform: rotate(360deg);
+  }
+}
+
+
+/***To-do**
+
+oval >> squares
+rectangles >> circles
+
+OVals morph slowly, and a few times
+4 seconds to changes 2 times - ending as a square.
+
+Rectangles morph quickly and many times*/
+/*2 seconds to change 4 times - ending in as a circle*/
